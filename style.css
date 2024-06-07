@@ -1,0 +1,65 @@
+*{
+    font-family: 'Lucida Sans';
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+
+}
+
+body{
+    background-image: url(./images/_1a45d613-c7cc-4dbf-b5d9-04b922ca0fe8.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 600px;
+}
+
+.card{
+    margin: 20px;
+    padding:30px;
+    border: 30px;
+    background-image: linear-gradient(to bottom right, darkcyan, cyan);
+    opacity: 85%;
+    width: 600px;
+    height: 250px;
+    border-radius: 30px;
+    display: block;
+
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search input{
+    background: whitesmoke;
+    color:black;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    border: 0;
+    border-radius: 20px;
+    font-size: 20px;
+
+
+
+}
+
+.search button{
+    background-color: whitesmoke;
+    padding-left: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+    border-radius: 10px;
+    display: flex;
+    font-size: 15px;
+    margin-left: 10px;
+    
+    
+
+}

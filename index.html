@@ -13,17 +13,45 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+
+ 
       <div class="card">
+
+        <h1>Weather App</h1>
+
+           <!-- container to search for a city -->
         <div class="search">
-            <input type="text" placeholder="Enter City Name">
+            <input type="text" id="searched-city" placeholder="Enter City Name">
             
-            <button id="searchbutton" type="button">Search</button>
+            <button id="searchButton" type="button">Search</button>
+
         </div>
 
+        <!-- container showing weather details -->
+
+<div class=""cityDetails">
+        <div class="name"></div>
+        <div class="temp"></div>
+        <div class="description"></div>
+        <div class="feels_like"></div>
+        <div class="humidity"></div>
+        <div class="speed"></div>
+        <div class="sunrise"></div>
+        <div class="sunset"></div>
+        
+
+</div>
+
+        <!-- container showing 5 day forecast -->
+
+
+        <!-- container showing previous weather -->
       
         
       </div>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"></script>
         <script src="script.js" async defer></script>
     </body>
 </html>

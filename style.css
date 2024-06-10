@@ -3,7 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing:border-box;
+    
 
+}
+
+h1{
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 body{
@@ -49,7 +55,7 @@ body{
 
 }
 
-.search button{
+.searchButton{
     background-color: whitesmoke;
     padding-left: 8px;
     padding-top: 8px;

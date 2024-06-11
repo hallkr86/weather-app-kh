@@ -46,16 +46,22 @@ localStorage.setItem("singleTruth", JSON.stringify(singleTruth));
 
 
 // add content for current weather
-    $(".name").html("<h1>" + response.name + "Weather Details </h1>" + rightNow);
-    $(".temperature").text("Temperature: " + response.main.temp);
+    $(".name").html("<h1>" + response.name + " Weather Details </h1>" + rightNow);
+    
+    $(".temp").text("Temperature: " + Math.round(response.main.temp) + " F");
+   
     $(".description").text("Description: " + response.weather[0].description);
-    $(".feel_like").text("Feels Like: " + response.main.feel_like);
-    $(".humidity").text("Humidity: " + response.main.humidity);
-    $(".speed").text("Wind Speed: " + response.wind.speed);
+    $(".feels_like").text("Feels Like: " + Math.round(response.main.feels_like) + " F");
+    $(".humidity").text("Humidity: " + response.main.humidity + " %");
+    $(".speed").text("Wind Speed: " + response.wind.speed + " MPH");
     $(".sunrise").text("Sunrise: " + response.sys.sunrise);
     $(".sunset").text("Sunset: " + response.sys.sunset);
 
 
+
+    if (response.weather[0].description === rain) {
+            console.log(response.weather[0].description);
+    }
 
 });
 

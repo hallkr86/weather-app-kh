@@ -3,6 +3,9 @@
 var searchButton = $("#searchButton");
 var APIKey = "40ad4d8ec5051c0bfbf49065da1234f5";
 var singleTruth = [];
+// var weatherIcon = $(".weatherIcon");
+
+
 
 
 
@@ -56,12 +59,37 @@ localStorage.setItem("singleTruth", JSON.stringify(singleTruth));
     $(".speed").text("Wind Speed: " + response.wind.speed + " MPH");
     $(".sunrise").text("Sunrise: " + response.sys.sunrise);
     $(".sunset").text("Sunset: " + response.sys.sunset);
+    $(".weather-icon").attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
 
 
-
-    if (response.weather[0].description === rain) {
-            console.log(response.weather[0].description);
-    }
+    // if (response.weather[0].description === "clear sky" || "sunny") {
+    //         weatherIcon.src = "images/sunny.png";
+    // }
+    // else if (response.weather[0].description === "few clouds") {
+    //     weatherIcon.src = "images/few_clouds.png";
+    // }
+    // else if (response.weather[0].description === "scattered clouds") {
+    //     weatherIcon.src = "images/scattered_clouds.png";
+    // }
+    // else if (response.weather[0].description === "broken clouds") {
+    //     weatherIcon.src = "images/broken_clouds.png";
+    // }
+    // else if (response.weather[0].description === "shower rain") {
+    //     weatherIcon.src = "images/shower_rain.png";
+    // }
+    // else if (response.weather[0].description === "rain") {
+    //     weatherIcon.src = "images/rain.png";
+    // }
+    // else if (response.weather[0].description === "thunderstorm") {
+    //     weatherIcon.src = "images/thunderstorm.png";
+    // }
+    // else if (response.weather[0].description === "snow") {
+    //     weatherIcon.src = "images/snow.png";
+    // }
+    // else if (response.weather[0].description === "mist") {
+    //     weatherIcon.src = "images/mist.png";
+    // }
+   
 
 });
 

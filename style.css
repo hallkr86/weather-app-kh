@@ -70,3 +70,10 @@ body{
     
 
 }
+
+.weather-icon{
+    align-items: center;
+    justify-content: center; 
+    display: block;
+    
+}

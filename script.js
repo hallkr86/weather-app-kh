@@ -1,5 +1,6 @@
 // create variables for search button, city name input, api key, and url
-
+$(document).ready(function() {
+    $("#searchButton").on("click", function() {
 var searchButton = $("#searchButton");
 var APIKey = "40ad4d8ec5051c0bfbf49065da1234f5";
 var singleTruth = [];
@@ -61,6 +62,9 @@ localStorage.setItem("singleTruth", JSON.stringify(singleTruth));
     $(".sunset").text("Sunset: " + response.sys.sunset);
     $(".weather-icon").attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
 
+    // call 5 day forecast
+
+    getForecast(cityName);
 
     // if (response.weather[0].description === "clear sky" || "sunny") {
     //         weatherIcon.src = "images/sunny.png";
@@ -92,10 +96,36 @@ localStorage.setItem("singleTruth", JSON.stringify(singleTruth));
    
 
 });
-
-
 }
 
+function getForecast(cityName) {
+    $.ajax({
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" +  APIKey + "&units=imperial",
+        method: "GET",
+    }).then (function(response){
+        
+        console.log(response);
+ 
+    
+
+        $(".forecastCard").text("5 Day Forecast: ");
+
+        // create html elements
+
+        $(".forecastDeets").text("Date: " + response.list[0].dt_txt);
+        $(".forecastTemp").text("Temperature: " + response.list[0].main.temp);
+        $(".forecastHumid").text("Humidity: " + response.list[0].main.humidity);
+
+    });
+
+
+    // add content for forecast
+    
+}
+
+});
+
+});
 
 
 
@@ -107,7 +137,3 @@ localStorage.setItem("singleTruth", JSON.stringify(singleTruth));
 
 
 
-
-// send the content to html
-
-// log it in the console

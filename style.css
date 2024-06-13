@@ -71,9 +71,20 @@ body{
 
 }
 
-.weather-icon{
+/* .weather-icon{
     align-items: center;
     justify-content: center; 
     display: block;
     
+} */
+
+.sm-card{
+    margin: 20px;
+    padding:30px;
+    border: 30px;
+    background-image: linear-gradient(to bottom right, darkcyan, cyan);
+    opacity: 85%;
+    width: 600px;
+    height: 100%;
+    border-radius: 30px; 
 }

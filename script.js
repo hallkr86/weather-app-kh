@@ -1,9 +1,9 @@
 // create variables for search button, city name input, api key, and url
 $(document).ready(function() {
-    $("#searchButton").on("click", function() {
+    // $("#searchButton").on("click", function() {
 var searchButton = $("#searchButton");
 var APIKey = "40ad4d8ec5051c0bfbf49065da1234f5";
-var singleTruth = [];
+// var singleTruth = [];
 // var weatherIcon = $(".weatherIcon");
 
 
@@ -40,13 +40,13 @@ $.ajax({
     console.log(response);
 
 
-    singleTruth.push({
-        name: searchButton.value
-    })
+//     singleTruth.push({
+//         name: searchButton.value
+//     })
 
 
-// merge and add to page
-localStorage.setItem("singleTruth", JSON.stringify(singleTruth));
+// // merge and add to page
+// localStorage.setItem("singleTruth", JSON.stringify(singleTruth));
 
 
 // add content for current weather
@@ -99,23 +99,58 @@ localStorage.setItem("singleTruth", JSON.stringify(singleTruth));
 }
 
 function getForecast(cityName) {
+
+    var queryURL2 = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" +  APIKey + "&units=imperial";
+
     $.ajax({
-        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" +  APIKey + "&units=imperial",
+        url: queryURL2,
         method: "GET",
     }).then (function(response){
         
+        console.log(queryURL2);
         console.log(response);
  
+    // create div in html
+
+
+     $("#forecast").html("<h4 class=\"mt-3\">5-Day Forecast:</h4>").append("<div class=\"row\">")   
+
+
+        for (var i = 0; i < response.list.length; i++) {
+
+
+            // console.log(response.list);
+
+            if(response.list[i].dt_txt.indexOf("15:00:00") !== -1) {
+
+              
+                console.log(response.list[i].dt_txt);
+
+                // another single truth?
+                
+
+        // create html elements is easier
+        var card = $("<div>").addClass("col-md-2");
+        
+        var title= $("<p>").addClass("forecastDeets").text("Date: " + response.list[i].dt_txt);
+
+        var icon= $("<img>").addClass("weather-icon").attr("src", "https://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + "@2x.png");
+        var p1 = $("<p>").addClass("forecastTemp").text("Temperature: " + response.list[i].main.temp);
+        var p2 = $("<p>").addClass("forecastHumid").text("Humidity: " + response.list[i].main.humidity);
+
+        // singleTruth.push({
+        //     name: searchButton.value
+        // })
+
+        card.append(title, icon, p1, p2);
+        $("#forecast .row").append(card);
+        
+            };
+
+           
+    };
+
     
-
-        $(".forecastCard").text("5 Day Forecast: ");
-
-        // create html elements
-
-        $(".forecastDeets").text("Date: " + response.list[0].dt_txt);
-        $(".forecastTemp").text("Temperature: " + response.list[0].main.temp);
-        $(".forecastHumid").text("Humidity: " + response.list[0].main.humidity);
-
     });
 
 
@@ -125,7 +160,7 @@ function getForecast(cityName) {
 
 });
 
-});
+// });
 
 
 

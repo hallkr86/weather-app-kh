@@ -113,7 +113,7 @@ function getForecast(cityName) {
     // create div in html
 
 
-     $("#forecast").html("<h4 class=\"mt-3\">5-Day Forecast:</h4>").append("<div class=\"row\">")   
+     $("#forecast").html("<h4 class=\"md-3 card\">5-Day Forecast:</h4>").append("<div class=\"row row-cols-1 row-cols-md-5 g-4\">");   
 
 
         for (var i = 0; i < response.list.length; i++) {
@@ -130,8 +130,9 @@ function getForecast(cityName) {
                 
 
         // create html elements is easier
-        var card = $("<div>").addClass("col-md-2");
-        
+        var col = $("<div>").addClass("row-cols-1");
+        var card = $("<div>").addClass("card forecastCard");
+        var body = $("<div>").addClass("card-body"); 
         var title= $("<p>").addClass("forecastDeets").text("Date: " + response.list[i].dt_txt);
 
         var icon= $("<img>").addClass("weather-icon").attr("src", "https://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + "@2x.png");
@@ -142,8 +143,8 @@ function getForecast(cityName) {
         //     name: searchButton.value
         // })
 
-        card.append(title, icon, p1, p2);
-        $("#forecast .row").append(card);
+        col.append(card.append(body.append(title, icon, p1, p2)));
+        $("#forecast .row").append(col);
         
             };
 

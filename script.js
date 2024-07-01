@@ -113,7 +113,7 @@ function getForecast(cityName) {
     // create div in html
 
 
-     $("#forecast").html("<h4 class=\"md-3 card\">5-Day Forecast:</h4>").append("<div class=\"row row-cols-1 row-cols-md-5 g-4\">");   
+     $("#forecast").html("<h4 class=\"md-3 title\">5-Day Forecast:</h4>").append("<div class=\"row row-cols-1 row-cols-md-5 g-4\">");   
 
 
         for (var i = 0; i < response.list.length; i++) {

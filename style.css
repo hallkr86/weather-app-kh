@@ -3,8 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing:border-box;
-    
-
 }
 
 h1{
@@ -35,8 +33,6 @@ body{
     margin: auto;
     /* display: flex;
     flex-direction: column; */
-   
-
 }
 
 .search{
@@ -58,9 +54,6 @@ body{
     font-size: 20px;
     margin-bottom: 5px;
     margin-right: 4px;
-
-
-
 }
 
 .searchButton{
@@ -73,9 +66,6 @@ body{
     display: flex;
     font-size: 15px;
     margin-left: 10px;
-    
-    
-
 }
 
 .title{
@@ -83,8 +73,7 @@ body{
   text-align: center;
   padding: 2px 5px 2px 5px;
   margin: 5px 0 5px 275px;
-    /* margin-right: 5px; */
-   
+    /* margin-right: 5px; */ 
 }
 
 .card{
@@ -93,14 +82,12 @@ padding:10px;
 border: 30px;
 background-image: linear-gradient(to bottom right, darkcyan, cyan);
 opacity: 85%;
-width: 500px;
+width: 400px;
 height: 100%;
 border-radius: 30px;
 display: block;
 /* display: flex;
 flex-direction: column; */
-
-
 }
 
 

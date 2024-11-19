@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Weather App</title>
+    <title>Weather Dashboard</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -16,39 +16,106 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="weatherCard">
-      <h1>Weather App</h1>
+
+
+
+
+
+
+  
+   
+      <header class="container-fluid text-center text-white bg-dark p-2">
+        <h1>Weather Dashboard</h1>
+      </header>
+        <!-- container to search for a city -->
+        <div class="weatherCard container-fluid">
+          <div class="row">
+          <aside class="col-lg-3">
+            <h5 class="mt-1">Search for a City:</h5>
+          <div class="form-inline form-group">
+          <input class="form-control" type="text" id="searched-city" placeholder="Enter City Name" />
+  
+          
+          <button class="btn btn-primary" id="searchButton"> <i class="fa fa-search"></i> </button>
+        </div>
+  
+
+      
+        <ul class="history list-group"></ul>
+        </aside>
+  
+        <!-- container showing weather details -->
+  
+        <div class="col-lg-9">
+          <div class="md-3" id="today"></div>
+          <div class="md-3" id="forecast"></div>
+          
+        </div>
+      </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    
+    <!-- <div class="row">
+    <div class="weatherCard container-fluid text-center">
+      <h1>Weather Dashboard</h1> -->
 
       <!-- container to search for a city -->
-      <div class="search">
+      <!-- <div class="search">
         <input type="text" id="searched-city" placeholder="Enter City Name" />
 
-        <button id="searchButton" type="button">Search</button>
-      </div>
+        
+        <button class="btn btn-primary" id="searchButton"> <i class="fa fa-search"></i> </button>
+      </div> -->
+
+      
 
       <!-- container showing weather details -->
 
-      <div class="cityDetails">
+      <!-- <div class="cityDetails">
         <img class="weather-icon" />
         <div class="name"></div>
         <div class="temp"></div>
 
-        <div class="description"></div>
+        
         <div class="feels_like"></div>
         <div class="humidity"></div>
-        <div class="speed"></div>
+        <div class="speed"></div> -->
         <!-- <div class="sunrise"></div>
             <div class="sunset"></div> -->
-      </div>
-    </div>
+      <!-- </div>
+    </div> -->
 
+   
+
+  
+   
     <!-- container showing 5 day forecast -->
-    <div class="col-lg-9">
+    <!-- <div class="col-lg-9">
       <div class="md-3" id="forecast"></div>
     </div>
+
+    <div class="container-fluid">
+        
+        <aside class = "col-lg-3">
+            <ul class="history list-group"></ul>
+        </aside>
+        </div>
+
+   </div> -->
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"></script>

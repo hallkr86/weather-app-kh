@@ -1,4 +1,4 @@
-*{
+/* *{
     font-family: 'Lucida Sans';
     margin: 0;
     padding: 0;
@@ -8,21 +8,25 @@
 h1{
     text-align: center;
     padding-bottom: 10px;
-}
+} */
 
 body{
-    background-image: url(./images/_1a45d613-c7cc-4dbf-b5d9-04b922ca0fe8.jpg);
+    background-image: url("./images/_1a45d613-c7cc-4dbf-b5d9-04b922ca0fe8.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    opacity: 75px;
     /* display: flex; */
     /* flex-direction: column; */
-    padding: 80px 80px 80px 80px;
+    /* padding: 20px 0 80px 0; */
 }
+
+
+/* 
 
 .weatherCard{
     /* margin: 0 0 10px 500px; */
-    padding:10px;
+    /* padding:10px;
     border: 30px;
     background-image: linear-gradient(to bottom right, darkcyan, cyan);
     opacity: 85%;
@@ -30,30 +34,36 @@ body{
     height: 100%;
     border-radius: 30px;
     display: block;
-    margin: auto;
+    margin: auto; */
     /* display: flex;
     flex-direction: column; */
-}
+/* } */
 
-.search{
+/* .history{
+    justify-content: left;
+    margin: 10px 30px 10px 5px;
+    
+} */
+
+/* .search{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
-.search input{
+/* .search input{
     background: whitesmoke;
     color:black;
-    padding-left: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
     border: 0;
-    border-radius: 20px;
+    border-radius: 5px;
     font-size: 20px;
-    margin-bottom: 5px;
-    margin-right: 4px;
+    
+    
 }
 
 .searchButton{
@@ -65,18 +75,18 @@ body{
     border-radius: 10px;
     display: flex;
     font-size: 15px;
-    margin-left: 10px;
-}
-
+    margin-left: 5px;
+} */
+/* 
 .title{
   background-color: powderblue;
   text-align: center;
   padding: 2px 5px 2px 5px;
-  margin: 5px 0 5px 275px;
+  margin: 5px 0 5px 275px; */
     /* margin-right: 5px; */ 
-}
+/* } */
 
-.card{
+/* .card{
 margin-left: 200px;
 padding:10px;
 border: 30px;
@@ -85,10 +95,10 @@ opacity: 85%;
 width: 400px;
 height: 100%;
 border-radius: 30px;
-display: block;
+display: block; */ 
 /* display: flex;
 flex-direction: column; */
-}
+/* } */
 
 
 /* .weather-icon{
@@ -97,14 +107,12 @@ flex-direction: column; */
     display: block;
     
 } */
+.title{
+    color: white;
+    padding-top: 10px;
+}
 
-/* .forecastCard{
-    margin: 20px;
-    padding:30px;
-    border: 30px;
-    background-image: linear-gradient(to bottom right, darkcyan, cyan);
-    opacity: 85%;
-    width: 600px;
-    height: 100%;
-    border-radius: 30px; 
-} */
+.forecastCard{
+ background-color:royalblue;
+ color: white;
+}

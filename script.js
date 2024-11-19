@@ -17,6 +17,15 @@ $(document).ready(function () {
     citySearch(cityName);
   });
 
+  $(".history").on("click", "li", function() {
+    citySearch($(this).text());
+  });
+
+  function makeRow(text) {
+    var li = $("<li>").addClass("list-group-item list-group-item-action").text(text);
+    $(".history").append(li);
+  }
+
   function citySearch(cityName) {
     console.log(cityName);
 
@@ -37,61 +46,55 @@ $(document).ready(function () {
       console.log(queryURL);
       console.log(response);
 
+
+      // if(history.indexOf(cityName) === -1) {
+      //   history.pushState(cityName);
+      //   window.localStorage.setItem("history", JSON.stringify(history));
+
+        makeRow(cityName);
+      // }
+
+      $("#today").empty();
+      
       // // merge and add to page
       // localStorage.setItem("singleTruth", JSON.stringify(singleTruth));
 
+
       // add content for current weather
-      $(".name").html(
-        "<h1>" + response.name + " Weather Details </h1>" + rightNow
+      var title = $("<h1>").addClass("card-title").html(response.name + " </h1>" + rightNow
       );
+      var card = $("<div>").addClass("card");
+      var cardBody = $("<div>").addClass("card-body");
+      var temp = $("<p>").addClass("card-text").text("Temperature: " + Math.round(response.main.temp) + " F");
 
-      $(".temp").text("Temperature: " + Math.round(response.main.temp) + " F");
-
-      $(".description").text("Description: " + response.weather[0].description);
-      $(".feels_like").text(
+      
+      var feelsLike = $("<p>").addClass("card-text").text(
         "Feels Like: " + Math.round(response.main.feels_like) + " F"
       );
-      $(".humidity").text("Humidity: " + response.main.humidity + " %");
-      $(".speed").text("Wind Speed: " + response.wind.speed + " MPH");
 
-      $(".weather-icon").attr(
+      var humid = $("<p>").addClass("card-text").text("Humidity: " + response.main.humidity + " %");
+      var windSpeed = $("<p>").addClass("card-text").text("Wind Speed: " + response.wind.speed + " MPH");
+
+      var image = $("<img>").attr(
         "src",
         "https://openweathermap.org/img/wn/" +
           response.weather[0].icon +
           "@2x.png"
       );
 
+
+      title.append(image);
+      cardBody.append(title, temp, feelsLike, humid, windSpeed);
+      card.append(cardBody);
+      $("#today").append(card);
       // call 5 day forecast
 
       getForecast(cityName);
 
-      // if (response.weather[0].description === "clear sky" || "sunny") {
-      //         weatherIcon.src = "images/sunny.png";
-      // }
-      // else if (response.weather[0].description === "few clouds") {
-      //     weatherIcon.src = "images/few_clouds.png";
-      // }
-      // else if (response.weather[0].description === "scattered clouds") {
-      //     weatherIcon.src = "images/scattered_clouds.png";
-      // }
-      // else if (response.weather[0].description === "broken clouds") {
-      //     weatherIcon.src = "images/broken_clouds.png";
-      // }
-      // else if (response.weather[0].description === "shower rain") {
-      //     weatherIcon.src = "images/shower_rain.png";
-      // }
-      // else if (response.weather[0].description === "rain") {
-      //     weatherIcon.src = "images/rain.png";
-      // }
-      // else if (response.weather[0].description === "thunderstorm") {
-      //     weatherIcon.src = "images/thunderstorm.png";
-      // }
-      // else if (response.weather[0].description === "snow") {
-      //     weatherIcon.src = "images/snow.png";
-      // }
-      // else if (response.weather[0].description === "mist") {
-      //     weatherIcon.src = "images/mist.png";
-      // }
+      // getUVIndex(response.coord.lat, response.coord.lon);
+
+     
+ 
     });
   }
 
@@ -125,9 +128,9 @@ $(document).ready(function () {
           // another single truth?
 
           // create html elements is easier
-          var col = $("<div>").addClass("row-cols-1");
+          var col = $("<div>").addClass("col-md-2");
           var card = $("<div>").addClass("card forecastCard");
-          var body = $("<div>").addClass("card-body");
+          var body = $("<div>").addClass("card-body p-2");
           var title = $("<p>")
             .addClass("forecastDeets")
             .text("Date: " + response.list[i].dt_txt);
@@ -157,6 +160,48 @@ $(document).ready(function () {
       }
     });
 
+  // cost money to include a uv index api now
+    // function getUVIndex(lat, lon) {
+    //   var queryURL3 =
+    //     "https://api.openweathermap.org/data/3.0/onecall?lat=" +lat+ "&lon=" +lon +
+      
+    //     "&appid=" +
+    //     APIKey;
+  
+    //   $.ajax({
+    //     url: queryURL3,
+    //     method: "GET",
+    //   }).then(function (response) {
+    //     console.log(queryURL3);
+    //     console.log(response);
+
+    //     var uv = $("<p>").text("UV Index: ");
+    //     var btn = $("<span>").addClass("btn btn-sm").text(response.coord);
+
+
+        // if (data.value < 3) {
+        //   btn.addClass("btn-success");
+        // }
+        // else if (data.value < 7) {
+        //   btn.addClass("btn-warning");
+        // }
+        // else {
+        //   btn.addClass("btn-danger");
+        // }
+        
+        // $("#today .card-body").append(uv.append(btn));
+    //   })
+    // };
+
+  var history = JSON.parse(window.localStorage.getItem("history")) || [];
+
+  if (history.length > 0) {
+    citySearch(history[history.length-1]);
+  }
+
+  for (var i = 0; i < history.length; i++) {
+    makeRow(history[i]);
+  }
    
   }
 });

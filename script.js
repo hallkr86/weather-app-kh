@@ -1,10 +1,9 @@
 // create variables for search button, city name input, api key, and url
 $(document).ready(function () {
-  // $("#searchButton").on("click", function() {
+  
   var searchButton = $("#searchButton");
   var APIKey = "40ad4d8ec5051c0bfbf49065da1234f5";
-  // var singleTruth = [];
-  // var weatherIcon = $(".weatherIcon");
+
 
   // function for when user search for a city and we want the day and time
 
@@ -47,17 +46,14 @@ $(document).ready(function () {
       console.log(response);
 
 
-      // if(history.indexOf(cityName) === -1) {
-      //   history.pushState(cityName);
-      //   window.localStorage.setItem("history", JSON.stringify(history));
+      
 
         makeRow(cityName);
-      // }
+     
 
       $("#today").empty();
       
-      // // merge and add to page
-      // localStorage.setItem("singleTruth", JSON.stringify(singleTruth));
+   
 
 
       // add content for current weather
@@ -91,6 +87,7 @@ $(document).ready(function () {
 
       getForecast(cityName);
 
+      // UVIndex is no longer free. I have to pay
       // getUVIndex(response.coord.lat, response.coord.lon);
 
      
@@ -125,7 +122,7 @@ $(document).ready(function () {
         if (response.list[i].dt_txt.indexOf("15:00:00") !== -1) {
           console.log(response.list[i].dt_txt);
 
-          // another single truth?
+          
 
           // create html elements is easier
           var col = $("<div>").addClass("col-md-2");

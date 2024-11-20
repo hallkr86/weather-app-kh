@@ -1,17 +1,5 @@
-/* *{
-    font-family: 'Lucida Sans';
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
-}
-
-h1{
-    text-align: center;
-    padding-bottom: 10px;
-} */
-
 body{
-    background-image: url("./images/_1a45d613-c7cc-4dbf-b5d9-04b922ca0fe8.jpg");
+    background-image: "../images/_1a45d613-c7cc-4dbf-b5d9-04b922ca0fe8.jpg";
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,50 +9,6 @@ body{
     /* padding: 20px 0 80px 0; */
 }
 
-
-/* 
-
-.weatherCard{
-    /* margin: 0 0 10px 500px; */
-    /* padding:10px;
-    border: 30px;
-    background-image: linear-gradient(to bottom right, darkcyan, cyan);
-    opacity: 85%;
-    width: 500px;
-    height: 100%;
-    border-radius: 30px;
-    display: block;
-    margin: auto; */
-    /* display: flex;
-    flex-direction: column; */
-/* } */
-
-/* .history{
-    justify-content: left;
-    margin: 10px 30px 10px 5px;
-    
-} */
-
-/* .search{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-/* .search input{
-    background: whitesmoke;
-    color:black;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 5px;
-    border: 0;
-    border-radius: 5px;
-    font-size: 20px;
-    
-    
-}
 
 .searchButton{
     background-color: whitesmoke;
@@ -76,37 +20,8 @@ body{
     display: flex;
     font-size: 15px;
     margin-left: 5px;
-} */
-/* 
-.title{
-  background-color: powderblue;
-  text-align: center;
-  padding: 2px 5px 2px 5px;
-  margin: 5px 0 5px 275px; */
-    /* margin-right: 5px; */ 
-/* } */
+} 
 
-/* .card{
-margin-left: 200px;
-padding:10px;
-border: 30px;
-background-image: linear-gradient(to bottom right, darkcyan, cyan);
-opacity: 85%;
-width: 400px;
-height: 100%;
-border-radius: 30px;
-display: block; */ 
-/* display: flex;
-flex-direction: column; */
-/* } */
-
-
-/* .weather-icon{
-    align-items: center;
-    justify-content: center; 
-    display: block;
-    
-} */
 .title{
     color: white;
     padding-top: 10px;
